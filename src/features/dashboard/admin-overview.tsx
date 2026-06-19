@@ -1,5 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
-import { CalendarDays, CheckCircle2, Clock3, Image, Scissors, Sparkles } from 'lucide-react'
+import { CalendarDays, Camera, CheckCircle2, Clock3, Image, Sparkles } from 'lucide-react'
 import { Card } from '../../components/ui/card'
 import { SectionHeader } from '../../components/ui/section-header'
 import { useSupabaseClient } from '../../lib/supabase'
@@ -23,13 +23,13 @@ export function AdminOverview() {
     <div className="space-y-6">
       <SectionHeader
         eyebrow="Oversikt"
-        title="Salongens drift i realtid"
-        description="Se vad som kraver uppmarksamhet och hur bokningssystemet mar just nu."
+        title="SABY Photos drift i realtid"
+        description="Se vad som kräver uppmärksamhet och hur bokningssystemet mår just nu."
       />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
         {[
-          { title: 'Aktiva tjanster', value: activeServices, detail: `${totalServices} totalt`, icon: Scissors },
+          { title: 'Aktiva fototjänster', value: activeServices, detail: `${totalServices} totalt`, icon: Camera },
           { title: 'Oppna dagar', value: openDays, detail: 'av 7 veckodagar', icon: Clock3 },
           { title: 'Vantar svar', value: pendingBookings, detail: 'att bekrafta', icon: CalendarDays },
           { title: 'Bekraftade', value: confirmedBookings, detail: 'kommande tider', icon: CheckCircle2 },
@@ -57,13 +57,13 @@ export function AdminOverview() {
             </div>
             <h2 className="mt-5 text-2xl font-bold text-ink-950">Prioritera idag</h2>
             <p className="mt-2 text-sm leading-6 text-ink-900/62">
-              Borja med bokningar som vantar pa bekraftelse, kontrollera dagens tider och hall tjanstemenyn uppdaterad.
+              Börja med bokningar som väntar på bekräftelse, kontrollera dagens tider och håll fototjänsterna uppdaterade.
             </p>
           </div>
           <div className="grid gap-3 p-5 md:grid-cols-3">
             {[
               'Bekrafta nya bokningar',
-              'Granska oppettider',
+              'Granska öppettider',
               'Publicera starka bilder',
             ].map((item) => (
               <div key={item} className="rounded-2xl border border-salon-line bg-white p-4 text-sm font-semibold text-ink-950">
@@ -79,7 +79,7 @@ export function AdminOverview() {
           </div>
           <h2 className="mt-5 text-xl font-bold text-ink-950">Professionell front</h2>
           <p className="mt-2 text-sm leading-6 text-ink-900/62">
-            Adminpanelen styr kundens upplevelse: aktiva tjanster, synliga tider och galleri visas direkt publikt.
+            Adminpanelen styr kundens upplevelse: aktiva fototjänster, synliga tider och galleri visas direkt publikt.
           </p>
         </Card>
       </div>

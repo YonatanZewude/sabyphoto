@@ -1,6 +1,6 @@
-# Hair Salon Booking MVP
+# SABY Photo Booking
 
-Single-salon booking system built with React, Vite, Tailwind CSS, Supabase, and Clerk.
+Photography booking and gallery system built with React, Vite, Tailwind CSS, Supabase, and Clerk.
 
 ## Implemented routes
 
@@ -32,7 +32,7 @@ Protected routes:
 
 ## Environment variables
 
-Use `.env` for shared technical keys and one `.env.<client>` file per salon.
+Use `.env` for shared technical keys and one `.env.<client>` file per photography brand.
 
 Copy `.env.example` to `.env` and fill in:
 
@@ -42,19 +42,19 @@ VITE_SUPABASE_URL=
 VITE_SUPABASE_ANON_KEY=
 ```
 
-Studio Lumi is already set up in `.env.studiolumi`.
+SABY Photo is the default brand in the app.
 
 To create a new client profile:
 
-1. Copy `.env.studiolumi` to `.env.<clientname>`.
+1. Copy your existing `.env` to `.env.<clientname>`.
 2. Update `VITE_SALON_*`, `VITE_SERVICES_*`, and `VITE_CONTACT_*` in that file.
 3. Run the correct Vite mode for that client.
 
 Example:
 
 ```bash
-npm run dev:studiolumi
-npm run build:studiolumi
+npm run dev
+npm run build
 ```
 
 ## Clerk setup
@@ -92,7 +92,7 @@ supabase functions deploy confirm-booking
 4. Set function secrets:
 
 ```bash
-supabase secrets set RESEND_API_KEY=... ADMIN_NOTIFICATION_EMAIL=... SALON_NAME="Studio Lumi" EMAIL_FROM_NAME="Studio Lumi" EMAIL_FROM_ADDRESS="bokning@din-domän.se"
+supabase secrets set RESEND_API_KEY=... ADMIN_NOTIFICATION_EMAIL=... SALON_NAME="SABY Photo" EMAIL_FROM_NAME="SABY Photo" EMAIL_FROM_ADDRESS="bokning@din-domän.se"
 ```
 
 `SALON_NAME`, `EMAIL_FROM_NAME` och `EMAIL_FROM_ADDRESS` styr företagsspecifik branding i bokningsmejlen.
@@ -120,7 +120,7 @@ npm run build
 The codebase is intentionally organized so it can later support:
 
 - multiple employees
-- multiple salons
+- multiple photographers
 - Stripe payments
 - SMS reminders
 - customer accounts

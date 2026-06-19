@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { Clock3, Pencil, Plus, Scissors, Trash2 } from 'lucide-react'
+import { Camera, Clock3, Pencil, Plus, Trash2 } from 'lucide-react'
 import { useMemo, useState } from 'react'
 import { toast } from 'sonner'
 import { Badge } from '../../components/ui/badge'
@@ -31,7 +31,7 @@ export function ServicesAdminSection() {
   const createMutation = useMutation({
     mutationFn: (values: ServiceFormValues) => createService(supabase, values),
     onSuccess: async () => {
-      toast.success('Tjansten skapades.')
+      toast.success('Fototjänsten skapades.')
       await invalidate()
     },
     onError: (error) => {
@@ -44,7 +44,7 @@ export function ServicesAdminSection() {
       updateService(supabase, id, values),
     onSuccess: async () => {
       setEditingService(null)
-      toast.success('Tjansten uppdaterades.')
+      toast.success('Fototjänsten uppdaterades.')
       await invalidate()
     },
     onError: (error) => {
@@ -56,7 +56,7 @@ export function ServicesAdminSection() {
     mutationFn: (id: string) => deleteService(supabase, id),
     onSuccess: async () => {
       setServiceToDelete(null)
-      toast.success('Tjansten togs bort.')
+      toast.success('Fototjänsten togs bort.')
       await invalidate()
     },
     onError: (error) => {
@@ -72,8 +72,8 @@ export function ServicesAdminSection() {
         confirmLabel="Ja, radera"
         description={
           serviceToDelete
-            ? `Tjansten "${serviceToDelete.name}" tas bort fran admin och kan inte langre bokas.`
-            : 'Tjansten tas bort.'
+            ? `Fototjänsten "${serviceToDelete.name}" tas bort från admin och kan inte längre bokas.`
+            : 'Fototjänsten tas bort.'
         }
         isLoading={deleteMutation.isPending}
         onCancel={() => setServiceToDelete(null)}
@@ -83,13 +83,13 @@ export function ServicesAdminSection() {
           }
         }}
         open={Boolean(serviceToDelete)}
-        title="Vill du radera tjansten?"
+        title="Vill du radera fototjänsten?"
       />
 
       <SectionHeader
-        eyebrow="Tjanster"
-        title="Behandlingsmeny"
-        description="Skapa, prissatt och publicera salongens behandlingar med professionell presentation."
+        eyebrow="Fototjänster"
+        title="Fotopaket"
+        description="Skapa, prissätt och publicera fototjänster som kunder kan boka online."
       />
 
       <div className="grid gap-6 xl:grid-cols-[420px_minmax(0,1fr)]">
@@ -99,10 +99,10 @@ export function ServicesAdminSection() {
               {editingService ? <Pencil className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
             </div>
             <h2 className="mt-5 text-2xl font-bold text-ink-950">
-              {editingService ? 'Redigera tjanst' : 'Ny tjanst'}
+              {editingService ? 'Redigera fototjänst' : 'Ny fototjänst'}
             </h2>
             <p className="mt-2 text-sm leading-6 text-ink-900/62">
-              Aktiva behandlingar visas direkt pa bokningssidan.
+              Aktiva fototjänster visas direkt på bokningssidan.
             </p>
           </div>
           <div className="p-6">
@@ -129,7 +129,7 @@ export function ServicesAdminSection() {
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-3">
                     <div className="grid h-11 w-11 place-items-center rounded-2xl bg-sand-50 text-copper-700">
-                      <Scissors className="h-5 w-5" />
+                      <Camera className="h-5 w-5" />
                     </div>
                     <div>
                       <h3 className="text-xl font-bold text-ink-950">{service.name}</h3>
@@ -169,7 +169,7 @@ export function ServicesAdminSection() {
 
           {!services.length && !servicesQuery.isLoading ? (
             <Card className="p-8 text-center text-sm text-ink-900/65">
-              Inga tjanster finns annu. Lagg till den forsta behandlingen.
+              Inga fototjänster finns ännu. Lägg till första fotopaketet.
             </Card>
           ) : null}
         </div>

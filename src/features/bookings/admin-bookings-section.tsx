@@ -256,7 +256,7 @@ export function AdminBookingsSection() {
             </div>
             <h2 className="mt-4 text-2xl font-bold text-ink-950">Lagg in en kundbokning</h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-ink-900/62">
-              Valj behandling och datum sa visas bara tider som ar lediga enligt oppettider och befintliga bokningar.
+              Välj fototjänst och datum så visas bara tider som är lediga enligt öppettider och befintliga bokningar.
             </p>
           </div>
           <div className="rounded-2xl bg-white px-4 py-3 text-sm font-semibold text-ink-950">
@@ -271,9 +271,9 @@ export function AdminBookingsSection() {
           <input type="hidden" {...adminForm.register('start_time')} />
 
           <div className="grid gap-4 lg:grid-cols-[1fr_220px]">
-            <Field error={adminForm.formState.errors.service_id?.message} label="Behandling">
+            <Field error={adminForm.formState.errors.service_id?.message} label="Fototjänst">
               <Select {...adminForm.register('service_id')}>
-                <option value="">Valj behandling</option>
+                <option value="">Välj fototjänst</option>
                 {(servicesQuery.data ?? []).map((service) => (
                   <option key={service.id} value={service.id}>
                     {service.name} / {service.duration_minutes} min / {service.price} SEK
@@ -314,7 +314,7 @@ export function AdminBookingsSection() {
             </div>
             {!adminSlots.length ? (
               <div className="rounded-3xl border border-dashed border-salon-line bg-sand-50 p-5 text-sm leading-6 text-ink-900/62">
-                Valj behandling och datum for att se lediga tider. Fullbokade tider visas inte.
+                Välj fototjänst och datum för att se lediga tider. Fullbokade tider visas inte.
               </div>
             ) : null}
             {adminForm.formState.errors.start_time ? (
@@ -408,7 +408,7 @@ export function AdminBookingsSection() {
                 </div>
 
                 <p className="mt-2 text-sm font-semibold text-copper-700 sm:mt-3">
-                  {booking.services?.name ?? 'Okand tjanst'}
+                  {booking.services?.name ?? 'Okänd fototjänst'}
                 </p>
 
                 <div className="mt-3 grid gap-2.5 text-sm text-ink-900/68 md:grid-cols-2 sm:mt-4 sm:gap-3">

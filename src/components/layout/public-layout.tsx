@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Menu, Scissors, Sparkles, X } from 'lucide-react'
+import { Camera, Menu, Sparkles, X } from 'lucide-react'
 import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import { InstallAppButton } from '../pwa/install-app-button'
 import { useAdminAccess } from '../../features/admin/use-admin-access'
@@ -76,7 +76,7 @@ export function PublicLayout() {
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-2.5 sm:px-6 sm:py-3 lg:px-8">
           <NavLink className="flex min-w-0 items-center gap-3" to="/">
             <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[linear-gradient(145deg,#bd8740,#994422)] text-white shadow-[0_12px_26px_rgba(153,68,34,0.2)] sm:h-12 sm:w-12">
-              <Scissors className="h-5 w-5" />
+              <Camera className="h-5 w-5" />
             </div>
             <div className="min-w-0">
               <p className="truncate font-serif text-lg leading-none text-ink-950 sm:text-2xl">{env.salonName}</p>
@@ -107,7 +107,7 @@ export function PublicLayout() {
               to="/booking"
               className="inline-flex items-center justify-center rounded-full border border-gold-500 bg-gold-400 px-5 py-2.5 text-sm font-semibold text-ink-950 transition hover:bg-gold-500"
             >
-              Boka tid
+              Boka foto
             </Link>
           </nav>
 
@@ -145,7 +145,7 @@ export function PublicLayout() {
                 to="/booking"
                 className="inline-flex items-center justify-center rounded-2xl border border-gold-500 bg-gold-400 px-4 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-500"
               >
-                Boka tid
+                Boka foto
               </Link>
               <div className="rounded-2xl border border-salon-line bg-white px-4 py-3">
                 <AdminMenuLink />

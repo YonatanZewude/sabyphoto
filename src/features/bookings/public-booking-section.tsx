@@ -10,7 +10,7 @@ import {
   Mail,
   MessageSquareMore,
   Phone,
-  Scissors,
+  Camera,
   Sparkles,
   UserRound,
   X,
@@ -25,7 +25,7 @@ import { Card } from '../../components/ui/card'
 import { Field, Input, Textarea } from '../../components/ui/field'
 import { SectionHeader } from '../../components/ui/section-header'
 import { cn } from '../../lib/cn'
-import { isConfigured } from '../../lib/env'
+import { env, isConfigured } from '../../lib/env'
 import { getPublicSupabaseClient } from '../../lib/supabase'
 import { fetchOpeningHours } from '../opening-hours/opening-hours-api'
 import { fetchActiveServices } from '../services/service-api'
@@ -222,12 +222,12 @@ function PublicBookingSectionInner() {
           <div className="flex flex-wrap items-start justify-between gap-4 sm:gap-6">
             <SectionHeader
               className="max-w-2xl [&_h1]:text-white [&_p]:text-white/68 [&_span]:text-gold-300"
-              description="Valj en behandling forst. Datum, tid, kontaktuppgifter och sammanfattning oppnas sedan i ett tydligt steg-for-steg-flode."
+              description="Välj en fototjänst först. Datum, tid, kontaktuppgifter och sammanfattning öppnas sedan i ett tydligt steg-för-steg-flöde."
               eyebrow="Boka tid"
-              title="Valj din behandling"
+              title="Välj din fotografering"
             />
             <div className="rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-xs font-semibold text-gold-300 sm:px-4 sm:py-2 sm:text-sm">
-              Studio Lumi
+              {env.salonName}
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ function PublicBookingSectionInner() {
         <div className="grid grid-cols-2 gap-2 p-3 sm:grid-cols-2 sm:gap-3 sm:p-6 lg:grid-cols-3">
           {servicesQuery.isLoading ? (
             <div className="col-span-full rounded-2xl border border-dashed border-salon-line p-4 text-sm text-ink-900/60 sm:rounded-3xl sm:p-6">
-              Hamtar behandlingar...
+              Hämtar fototjänster...
             </div>
           ) : null}
 
@@ -261,7 +261,7 @@ function PublicBookingSectionInner() {
                       isSelected ? 'bg-copper-600 text-white' : 'bg-sand-100 text-copper-700',
                     )}
                   >
-                    {isSelected ? <Check className="h-4 w-4 sm:h-5 sm:w-5" /> : <Scissors className="h-4 w-4 sm:h-5 sm:w-5" />}
+                    {isSelected ? <Check className="h-4 w-4 sm:h-5 sm:w-5" /> : <Camera className="h-4 w-4 sm:h-5 sm:w-5" />}
                   </span>
                   <span className="rounded-full bg-sand-100 px-2 py-0.5 text-[11px] font-bold text-ink-950 sm:px-3 sm:py-1 sm:text-xs">
                     {service.price} SEK
@@ -269,7 +269,7 @@ function PublicBookingSectionInner() {
                 </span>
                 <span className="mt-2 line-clamp-2 block text-sm font-bold leading-tight text-ink-950 sm:mt-5 sm:text-lg">{service.name}</span>
                 <span className="mt-1 line-clamp-2 block text-xs leading-4 text-ink-900/62 sm:mt-2 sm:text-sm sm:leading-6">
-                  {service.description || 'Professionell behandling hos Studio Lumi.'}
+                  {service.description || `Professionell fotografering hos ${env.salonName}.`}
                 </span>
                 <span className="mt-2 inline-flex items-center gap-1.5 text-xs font-semibold text-copper-700 sm:mt-5 sm:gap-2 sm:text-sm">
                   <Clock3 className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -308,7 +308,7 @@ function PublicBookingSectionInner() {
                             : 'Sammanfattning'}
                     </h2>
                     <p className="mt-1.5 text-sm leading-5 text-ink-900/62 sm:mt-2 sm:leading-6">
-                      {selectedService ? `${selectedService.name} - ${selectedService.duration_minutes} min / ${selectedService.price} SEK` : 'Valj behandling'}
+                      {selectedService ? `${selectedService.name} - ${selectedService.duration_minutes} min / ${selectedService.price} SEK` : 'Välj fototjänst'}
                     </p>
                   </div>
                   <button
@@ -428,7 +428,7 @@ function PublicBookingSectionInner() {
 
                     {!slots.length ? (
                       <div className="mt-4 rounded-3xl border border-dashed border-salon-line bg-sand-50 p-5 text-sm leading-6 text-ink-900/62">
-                        Inga tider visas for vald dag. Prova en annan dag eller kontrollera att behandlingen har lediga tider.
+                        Inga tider visas för vald dag. Prova en annan dag eller kontrollera att fototjänsten har lediga tider.
                       </div>
                     ) : null}
                     {form.formState.errors.start_time ? (
@@ -465,7 +465,7 @@ function PublicBookingSectionInner() {
                 {step === 'summary' ? (
                   <div className="grid gap-3 sm:gap-4">
                     <div className="rounded-3xl bg-sand-50 p-4 sm:p-5">
-                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-copper-700">Behandling</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.22em] text-copper-700">Fototjänst</p>
                       <p className="mt-2 text-lg font-bold text-ink-950">{selectedService?.name ?? 'Inte vald'}</p>
                       {selectedService ? (
                         <p className="mt-1 text-sm text-ink-900/62">

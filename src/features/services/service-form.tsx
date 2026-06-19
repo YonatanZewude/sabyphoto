@@ -51,11 +51,11 @@ export function ServiceForm({ initialValues, isSubmitting, onSubmit, onCancel }:
 
   return (
     <form className="grid gap-4" onSubmit={handleSubmit}>
-      <Field error={form.formState.errors.name?.message} label="Tjanstens namn">
-        <Input placeholder="Klippning Deluxe" {...form.register('name')} />
+      <Field error={form.formState.errors.name?.message} label="Fototjänstens namn">
+        <Input placeholder="Porträttfotografering" {...form.register('name')} />
       </Field>
       <Field error={form.formState.errors.description?.message} label="Beskrivning">
-        <Textarea placeholder="Beskriv vad kunden far och vem behandlingen passar for" {...form.register('description')} />
+        <Textarea placeholder="Beskriv vad kunden får, plats, leverans och vem fototjänsten passar för" {...form.register('description')} />
       </Field>
       <div className="grid gap-4 sm:grid-cols-2">
         <Field error={form.formState.errors.price?.message} label="Pris (SEK)">
@@ -66,12 +66,12 @@ export function ServiceForm({ initialValues, isSubmitting, onSubmit, onCancel }:
         </Field>
       </div>
       <label className="flex items-center justify-between gap-4 rounded-2xl border border-salon-line bg-sand-50 px-4 py-3 text-sm font-bold text-ink-950">
-        <span>Tjansten ar aktiv och synlig for kunder</span>
+        <span>Fototjänsten är aktiv och synlig för kunder</span>
         <input className="h-5 w-5 rounded border-salon-line accent-copper-600" type="checkbox" {...form.register('is_active')} />
       </label>
       <div className="flex flex-wrap gap-3">
         <Button disabled={isSubmitting} type="submit">
-          {initialValues ? 'Uppdatera tjanst' : 'Lagg till tjanst'}
+          {initialValues ? 'Uppdatera fototjänst' : 'Lägg till fototjänst'}
         </Button>
         {onCancel ? (
           <Button disabled={isSubmitting} onClick={onCancel} variant="secondary">

@@ -61,7 +61,7 @@ export function ContactPage() {
           </div>
 
           <div className="mt-5 rounded-2xl bg-sand-50 px-4 py-4 text-sm leading-6 text-ink-900/70 sm:mt-8 sm:rounded-[24px] sm:py-5 sm:leading-7">
-            Enkel kontaktsektion med tydlig information for nya kunder som vill ringa, mejla eller hitta till salongen direkt.
+            Tydlig information för nya kunder som vill ringa, mejla eller hitta till studion inför sin fotografering.
           </div>
         </Card>
 

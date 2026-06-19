@@ -60,7 +60,7 @@ export function OpeningHoursAdminSection() {
               <Clock3 className="h-4 w-4" />
               Bokningsbara tider
             </div>
-            <h2 className="mt-3 text-xl font-bold text-ink-950 sm:mt-4 sm:text-2xl">Justera salongens vecka</h2>
+            <h2 className="mt-3 text-xl font-bold text-ink-950 sm:mt-4 sm:text-2xl">Justera SABY Photos vecka</h2>
             <p className="mt-1.5 text-sm leading-6 text-ink-900/62 sm:mt-2">
               Stangda dagar och lunchpauser tas automatiskt bort fran kundens lediga tider.
             </p>

@@ -132,7 +132,7 @@ export function GalleryAdminSection() {
       <SectionHeader
         eyebrow="Galleri"
         title="Bildbibliotek"
-        description="Ladda upp, forhandsgranska och publicera bilder som bygger salongens visuella uttryck."
+        description="Ladda upp, förhandsgranska och publicera bilder. Skriv gärna kategori i titeln, till exempel Porträtt, Event eller Familj."
       />
 
       <Card className="overflow-hidden p-0">
@@ -140,11 +140,11 @@ export function GalleryAdminSection() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-[0.18em] text-copper-700">
               <Image className="h-4 w-4" />
-              Studio media
+              SABY Photo media
             </div>
-            <h2 className="mt-4 text-2xl font-bold text-ink-950">Publicera ett elegant galleri</h2>
+            <h2 className="mt-4 text-2xl font-bold text-ink-950">Publicera ett modernt fotogalleri</h2>
             <p className="mt-2 max-w-2xl text-sm leading-6 text-ink-900/62">
-              Nya bilder sparas i Supabase-bucketen gallery som utkast. Klicka Dela nar bilden ska visas for kunder.
+              Nya bilder sparas som utkast. Klicka Dela när bilden ska visas för kunder på den publika gallerisidan.
             </p>
           </div>
 
@@ -185,7 +185,7 @@ export function GalleryAdminSection() {
             <div className="rounded-3xl border-2 border-dashed border-ink-900/10 py-14 text-center">
               <Image className="mx-auto h-12 w-12 text-ink-900/20" />
               <h3 className="mt-4 text-lg font-bold text-ink-950">Inga bilder uppladdade</h3>
-              <p className="mt-2 text-sm text-ink-900/62">Ladda upp forsta bilden for att bygga galleriet.</p>
+              <p className="mt-2 text-sm text-ink-900/62">Ladda upp första bilden för att bygga galleriet.</p>
             </div>
           ) : null}
 

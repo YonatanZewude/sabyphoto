@@ -1,7 +1,7 @@
 import { z } from 'zod'
 
 export const bookingFormSchema = z.object({
-  service_id: z.string().uuid('Valj en behandling.'),
+  service_id: z.string().uuid('Välj en fototjänst.'),
   booking_date: z.string().min(1, 'Valj ett datum.'),
   start_time: z.string().regex(/^\d{2}:\d{2}:\d{2}$/, 'Valj en ledig tid.'),
   customer_name: z.string().min(2, 'Ange ditt namn.'),

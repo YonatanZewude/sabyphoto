@@ -6,69 +6,69 @@ export const env = {
   clerkPublishableKey: import.meta.env.VITE_CLERK_PUBLISHABLE_KEY ?? '',
   supabaseUrl: import.meta.env.VITE_SUPABASE_URL ?? '',
   supabaseAnonKey: import.meta.env.VITE_SUPABASE_ANON_KEY ?? '',
-  salonName: import.meta.env.VITE_SALON_NAME ?? 'Studio Lumi',
-  salonTagline: import.meta.env.VITE_SALON_TAGLINE ?? 'Boutique Hair Studio',
-  salonHeroLabel: import.meta.env.VITE_SALON_HERO_LABEL ?? import.meta.env.VITE_SALON_NAME ?? 'Studio Lumi',
+  salonName: import.meta.env.VITE_SALON_NAME ?? 'SABY Photo',
+  salonTagline: import.meta.env.VITE_SALON_TAGLINE ?? 'Modern fotograf i Stockholm',
+  salonHeroLabel: import.meta.env.VITE_SALON_HERO_LABEL ?? import.meta.env.VITE_SALON_NAME ?? 'SABY Photo',
   salonHeroTitle:
     import.meta.env.VITE_SALON_HERO_TITLE ??
-    'Boka din nästa behandling enkelt.',
+    'Fotografering med modern känsla och enkel onlinebokning.',
   salonHeroDescription:
     import.meta.env.VITE_SALON_HERO_DESCRIPTION ??
-    'Se tjänster, välj tid och boka direkt utan konto.',
-  salonHighlightOneLabel: import.meta.env.VITE_SALON_HIGHLIGHT_ONE_LABEL ?? 'Personlig service',
-  salonHighlightOneValue: import.meta.env.VITE_SALON_HIGHLIGHT_ONE_VALUE ?? 'Omsorg i varje detalj',
+    'Se fototjänster, välj en tid och boka din fotografering direkt utan konto.',
+  salonHighlightOneLabel: import.meta.env.VITE_SALON_HIGHLIGHT_ONE_LABEL ?? 'Personligt bildspråk',
+  salonHighlightOneValue: import.meta.env.VITE_SALON_HIGHLIGHT_ONE_VALUE ?? 'Bilder med känsla',
   salonHighlightTwoLabel: import.meta.env.VITE_SALON_HIGHLIGHT_TWO_LABEL ?? 'Boka utan konto',
   salonHighlightTwoValue: import.meta.env.VITE_SALON_HIGHLIGHT_TWO_VALUE ?? 'Snabbt och enkelt',
-  salonHighlightThreeLabel: import.meta.env.VITE_SALON_HIGHLIGHT_THREE_LABEL ?? 'Tydliga behandlingar',
+  salonHighlightThreeLabel: import.meta.env.VITE_SALON_HIGHLIGHT_THREE_LABEL ?? 'Tydliga fotopaket',
   salonHighlightThreeValue: import.meta.env.VITE_SALON_HIGHLIGHT_THREE_VALUE ?? 'Pris och tid direkt',
-  salonFeatureBadge: import.meta.env.VITE_SALON_FEATURE_BADGE ?? 'Signaturbesök',
+  salonFeatureBadge: import.meta.env.VITE_SALON_FEATURE_BADGE ?? 'Signaturfoto',
   salonFeatureTitle:
     import.meta.env.VITE_SALON_FEATURE_TITLE ??
-    'Tidlöst uttryck, varm atmosfär och resultat som håller.',
+    'Tidlösa bilder, trygg guidning och leverans med professionell finish.',
   salonFeatureDescription:
     import.meta.env.VITE_SALON_FEATURE_DESCRIPTION ??
-    'Vi arbetar med klippning, styling och behandlingar i en lugn miljö med fokus på kvalitet och detaljer.',
-  salonFeatureCardOneTitle: import.meta.env.VITE_SALON_FEATURE_CARD_ONE_TITLE ?? 'Färg, klipp och styling',
+    'Vi fotograferar porträtt, familj, event och företag med fokus på ljus, uttryck och detaljer.',
+  salonFeatureCardOneTitle: import.meta.env.VITE_SALON_FEATURE_CARD_ONE_TITLE ?? 'Porträtt, event och företag',
   salonFeatureCardOneDescription:
-    import.meta.env.VITE_SALON_FEATURE_CARD_ONE_DESCRIPTION ?? 'Behandlingar anpassade efter stil, form och helhetskänsla.',
+    import.meta.env.VITE_SALON_FEATURE_CARD_ONE_DESCRIPTION ?? 'Fotopaket anpassade efter syfte, miljö och önskad känsla.',
   salonFeatureCardTwoTitle: import.meta.env.VITE_SALON_FEATURE_CARD_TWO_TITLE ?? 'Bokning på mobilen',
   salonFeatureCardTwoDescription:
     import.meta.env.VITE_SALON_FEATURE_CARD_TWO_DESCRIPTION ?? 'Boka din tid enkelt, snabbt och när det passar dig.',
   salonAboutTitle:
-    import.meta.env.VITE_SALON_ABOUT_TITLE ?? 'Professionell hårvård med personlig känsla.',
+    import.meta.env.VITE_SALON_ABOUT_TITLE ?? 'Professionell fotografi med personlig känsla.',
   salonAboutDescription:
     import.meta.env.VITE_SALON_ABOUT_DESCRIPTION ??
-    'Vi kombinerar precisionsklippning, färg och styling med ett personligt bemötande i en lugn och modern studio.',
+    'Vi kombinerar modern fotoestetik, trygg regi och snabb bokning i en studio skapad för människor, varumärken och minnen.',
   salonBenefitOne:
     import.meta.env.VITE_SALON_BENEFIT_ONE ?? 'Personlig konsultation och resultat anpassat efter dig.',
   salonBenefitTwo:
     import.meta.env.VITE_SALON_BENEFIT_TWO ?? 'Tydliga priser och enkel bokning direkt online.',
   salonBenefitThree:
-    import.meta.env.VITE_SALON_BENEFIT_THREE ?? 'Lugn studio med modern känsla och noggrant utvalda behandlingar.',
+    import.meta.env.VITE_SALON_BENEFIT_THREE ?? 'Modern studio och flexibla miljöer för porträtt, event och produktfoto.',
   salonBenefitFour:
     import.meta.env.VITE_SALON_BENEFIT_FOUR ?? 'Adress, kontakt och öppettider samlade på ett ställe.',
   salonContactIntroTitle:
-    import.meta.env.VITE_SALON_CONTACT_INTRO_TITLE ?? 'Boka din nästa tid eller hitta till studion.',
+    import.meta.env.VITE_SALON_CONTACT_INTRO_TITLE ?? 'Boka din fotografering eller hitta till studion.',
   salonFooterDescription:
     import.meta.env.VITE_SALON_FOOTER_DESCRIPTION ??
-    'erbjuder klippning, styling och behandlingar i en lugn studio med enkel onlinebokning.',
+    'erbjuder porträtt, event, familjefoto och företagsbilder med enkel onlinebokning.',
   salonPhone: import.meta.env.VITE_SALON_PHONE ?? '08-123 45 67',
-  salonEmail: import.meta.env.VITE_SALON_EMAIL ?? 'hej@studiolumi.se',
+  salonEmail: import.meta.env.VITE_SALON_EMAIL ?? 'hej@sabyphoto.se',
   salonAddress: import.meta.env.VITE_SALON_ADDRESS ?? 'Storgatan 12, Stockholm',
-  salonInstagramUrl: import.meta.env.VITE_SALON_INSTAGRAM_URL ?? 'https://instagram.com/studioluxe',
-  salonFacebookUrl: import.meta.env.VITE_SALON_FACEBOOK_URL ?? 'https://facebook.com/studioluxe',
-  salonTiktokUrl: import.meta.env.VITE_SALON_TIKTOK_URL ?? 'https://tiktok.com/@studioluxe',
+  salonInstagramUrl: import.meta.env.VITE_SALON_INSTAGRAM_URL ?? 'https://instagram.com/sabyphoto',
+  salonFacebookUrl: import.meta.env.VITE_SALON_FACEBOOK_URL ?? 'https://facebook.com/sabyphoto',
+  salonTiktokUrl: import.meta.env.VITE_SALON_TIKTOK_URL ?? 'https://tiktok.com/@sabyphoto',
   salonMapEmbedUrl: createGoogleMapsEmbedUrl(import.meta.env.VITE_SALON_ADDRESS ?? 'Storgatan 12, Stockholm'),
   servicesPageTitle:
-    import.meta.env.VITE_SERVICES_PAGE_TITLE ?? 'Behandlingar med tydligt pris och tidsåtgång',
+    import.meta.env.VITE_SERVICES_PAGE_TITLE ?? 'Fototjänster med tydligt pris och tidsåtgång',
   servicesPageDescription:
     import.meta.env.VITE_SERVICES_PAGE_DESCRIPTION ??
-    'Se behandlingar, priser och behandlingstid innan du bokar din tid.',
+    'Se fotopaket, priser och tidsåtgång innan du bokar din fotografering.',
   contactPageTitle:
-    import.meta.env.VITE_CONTACT_PAGE_TITLE ?? 'Hitta till salongen och kontakta oss direkt.',
+    import.meta.env.VITE_CONTACT_PAGE_TITLE ?? 'Hitta till SABY Photo och kontakta oss direkt.',
   contactPageDescription:
     import.meta.env.VITE_CONTACT_PAGE_DESCRIPTION ??
-    'En enkel kontaktsida med adress, telefon, e-post och karta för kunder som vill hitta rätt innan besöket.',
+    'Adress, telefon, e-post och karta för kunder som vill planera sin fotografering eller ställa frågor innan bokning.',
 } as const
 
 export const isConfigured = {

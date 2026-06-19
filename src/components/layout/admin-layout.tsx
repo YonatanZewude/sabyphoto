@@ -1,4 +1,4 @@
-import { CalendarDays, Clock3, Home, Image, LayoutDashboard, LogOut, Scissors, Sparkles } from 'lucide-react'
+import { CalendarDays, Camera, Clock3, Home, Image, LayoutDashboard, LogOut, Sparkles } from 'lucide-react'
 import { SignOutButton, UserButton } from '@clerk/clerk-react'
 import { NavLink, Outlet } from 'react-router-dom'
 import { Button } from '../ui/button'
@@ -7,7 +7,7 @@ import { env } from '../../lib/env'
 
 const links = [
   { to: '/admin', label: 'Oversikt', icon: LayoutDashboard, end: true },
-  { to: '/admin/services', label: 'Tjanster', icon: Scissors },
+  { to: '/admin/services', label: 'Fototjänster', icon: Camera },
   { to: '/admin/opening-hours', label: 'Oppettider', icon: Clock3 },
   { to: '/admin/bookings', label: 'Bokningar', icon: CalendarDays },
   { to: '/admin/gallery', label: 'Galleri', icon: Image },
@@ -15,7 +15,7 @@ const links = [
 
 const publicLinks = [
   { to: '/', label: 'Hem', icon: Home, end: true },
-  { to: '/services', label: 'Tjanster' },
+  { to: '/services', label: 'Fototjänster' },
   { to: '/gallery', label: 'Galleri' },
   { to: '/contact', label: 'Kontakt' },
 ]
@@ -35,7 +35,7 @@ export function AdminLayout() {
                 Hantera {env.salonName}
               </h1>
               <p className="mt-3 max-w-2xl text-sm leading-6 text-white/70">
-                En samlad arbetsyta for bokningar, behandlingar, oppettider och galleri.
+                En samlad arbetsyta för bokningar, fototjänster, öppettider och galleri.
               </p>
             </div>
 
@@ -47,7 +47,7 @@ export function AdminLayout() {
                   </div>
                   <div>
                     <p className="text-xs font-bold uppercase tracking-[0.2em] text-white/42">Inloggad</p>
-                    <p className="text-sm font-semibold text-white">Studio admin</p>
+                    <p className="text-sm font-semibold text-white">SABY Photo admin</p>
                   </div>
                 </div>
                 <SignOutButton>
@@ -90,7 +90,7 @@ export function AdminLayout() {
                 to="/booking"
                 className="inline-flex min-h-10 items-center justify-center rounded-full border border-gold-500 bg-gold-400 px-5 text-sm font-bold text-ink-950 transition hover:bg-gold-500"
               >
-                Boka tid
+                Boka foto
               </NavLink>
             </nav>
           </div>

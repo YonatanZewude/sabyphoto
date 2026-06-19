@@ -16,7 +16,7 @@ function PublicServicesSectionContent({ services, isLoading }: { services: Displ
       <section className="surface-panel surface-hero gold-ring px-5 py-6 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
         <div>
           <SectionHeader
-            eyebrow="Tjanster"
+            eyebrow="Fototjänster"
             title={env.servicesPageTitle}
             description={env.servicesPageDescription}
           />
@@ -72,7 +72,7 @@ function PublicServicesSectionContent({ services, isLoading }: { services: Displ
       )}
 
       {!isLoading && !hasServices ? (
-        <Card className="p-6 text-sm text-ink-900/65">Inga aktiva tjanster finns just nu. Lagg till dem i admin innan sidan publiceras.</Card>
+        <Card className="p-6 text-sm text-ink-900/65">Inga aktiva fototjänster finns just nu. Lägg till dem i admin innan sidan publiceras.</Card>
       ) : null}
 
     </div>

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   ArrowRight,
+  Camera,
   ChevronLeft,
   ChevronRight,
   Star,
@@ -11,40 +12,37 @@ import { PageShell } from '../components/shell/page-shell'
 import { cn } from '../lib/cn'
 import { env } from '../lib/env'
 import { demoReviews } from '../features/reviews/reviews-data'
-import bil1Image from '../assets/img/bil1.jpg'
-import bild2Image from '../assets/img/bild2.png'
-import bild3Image from '../assets/img/bild3.png'
 
 const fallbackImages = [
   {
-    title: 'Professionell klippning',
-    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=1400&q=80',
+    title: 'Modern porträttfotografering',
+    image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1600&q=85',
   },
   {
-    title: 'Modern styling',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1400&q=80',
+    title: 'Eventfoto med känsla',
+    image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1600&q=85',
   },
   {
-    title: 'Lyxig salongsinterior',
-    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&w=1400&q=80',
+    title: 'Studiofotografering för varumärken',
+    image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=85',
   },
 ]
 
 const curatedExperienceCards = [
   {
-    title: 'Skägg och klippning',
-    subtitle: 'Skarp stil med precision och detaljer',
-    image: bil1Image,
+    title: 'Porträtt',
+    subtitle: 'Professionella bilder för profil, CV och sociala medier',
+    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Damklippning',
-    subtitle: 'Skonsam teknik med personligt uttryck',
-    image: bild2Image,
+    title: 'Familj och par',
+    subtitle: 'Varma bilder i studio, hemma eller utomhus',
+    image: 'https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=85',
   },
   {
-    title: 'Junior klippning',
-    subtitle: 'Trygg upplevelse för barn och ungdom',
-    image: bild3Image,
+    title: 'Event och företag',
+    subtitle: 'Dokumentation med ljus, tempo och tydlig leverans',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=900&q=85',
   },
 ]
 
@@ -104,7 +102,7 @@ export function HomePage() {
         <div className="relative mx-auto flex min-h-[calc(100dvh-5.5rem)] max-w-7xl items-end px-5 pb-10 pt-20 sm:min-h-[calc(100dvh-7rem)] sm:px-8 sm:pb-20 sm:pt-28 lg:px-12 lg:pb-24">
           <div className="max-w-3xl space-y-4 text-white sm:space-y-7">
             <p className="text-sm font-semibold uppercase tracking-[0.28em] text-gold-300/90 sm:tracking-[0.36em]">
-              Signaturstil med precision och personlighet
+              Modern fotografi med personlighet
             </p>
 
             <h1 className="font-serif text-4xl leading-tight tracking-[0.01em] text-white sm:text-5xl sm:leading-[1.02] lg:text-7xl">
@@ -117,14 +115,14 @@ export function HomePage() {
 
             <div className="flex flex-col items-start gap-2.5 pt-1 sm:flex-row sm:items-center sm:gap-4 sm:pt-2">
               <Link to="/booking" className="inline-flex min-h-10 items-center justify-center gap-2 rounded-full border border-gold-500 bg-gold-400 px-5 py-2 text-sm font-semibold text-ink-950 transition hover:bg-gold-500 sm:px-8 sm:py-4 sm:text-base">
-                Boka tid
+                Boka fotografering
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
                 to="/services"
                 className="inline-flex min-h-10 items-center justify-center rounded-full border border-white/30 px-5 py-2 text-sm font-semibold text-white transition hover:bg-white/10 sm:px-8 sm:py-4 sm:text-base"
               >
-                Se alla tjänster
+                Se fototjänster
               </Link>
               <InstallAppButton compact />
             </div>
@@ -151,9 +149,9 @@ export function HomePage() {
       <section id="gallery" className="bg-sand-50/40 py-10 sm:py-16 lg:py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
           <div className="mb-6 text-center sm:mb-12">
-            <h2 className="font-serif text-3xl leading-tight tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">Professionell hårvård</h2>
+            <h2 className="font-serif text-3xl leading-tight tracking-tight text-ink-950 sm:text-5xl lg:text-6xl">Utvalda bilder</h2>
             <p className="mt-3 text-sm leading-6 text-ink-900/68 sm:mt-4 sm:text-lg sm:leading-relaxed">
-              Vi skapar moderna frisyrer i en stilren och lugn miljö
+              Admin kan dela bilder i olika kategorier så besökare enkelt ser porträtt, event, familj och företag.
             </p>
           </div>
 
@@ -172,11 +170,11 @@ export function HomePage() {
 
           <div className="mt-7 flex flex-col items-center gap-3 sm:mt-12 sm:flex-row sm:justify-center sm:gap-4">
             <Link to="/booking" className="inline-flex items-center justify-center gap-2 rounded-full border border-gold-500 bg-gold-400 px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-gold-500 sm:px-8 sm:py-4 sm:text-base">
-              Boka tid
+              Boka fotografering
               <ArrowRight className="h-5 w-5" />
             </Link>
             <Link to="/services" className="inline-flex items-center justify-center rounded-full border border-ink-900/10 px-6 py-3 text-sm font-semibold text-ink-900 transition hover:bg-sand-50 sm:px-8 sm:py-4 sm:text-base">
-              Se priser
+              Se fotopaket
             </Link>
           </div>
         </div>
@@ -191,20 +189,20 @@ export function HomePage() {
             <div className="space-y-4 sm:space-y-6">
               <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.28em] text-gold-300/90">
                 <span className="h-px w-8 bg-gold-300/70" />
-                Skräddarsytt för din stil
+                Skräddarsytt för ditt ögonblick
               </p>
               <h2 className="font-serif text-3xl leading-tight text-white sm:text-5xl">
-                Mer än en klippning, en helhetsupplevelse
+                Mer än en bild, en hel upplevelse
               </h2>
               <p className="max-w-xl text-sm leading-6 text-white/74 sm:text-lg sm:leading-relaxed">
-                Oavsett om du vill ha en skarp fade, en mjuk färgövergång eller barnklippning med lugn hand,
-                formar vi behandlingen efter dig. Varje metod bygger på precision, tempo och detaljer som håller.
+                Oavsett om du behöver porträtt, familjebilder, eventdokumentation eller visuellt material till ditt företag
+                planerar vi fotograferingen efter ljus, plats och känslan du vill förmedla.
               </p>
               <Link
                 to="/services"
                 className="inline-flex items-center justify-center rounded-full border border-gold-500 bg-gold-400 px-7 py-3.5 text-sm font-semibold text-ink-950 transition hover:bg-gold-500"
               >
-                Upptäck behandlingar
+                Upptäck fototjänster
               </Link>
             </div>
 
@@ -219,6 +217,9 @@ export function HomePage() {
                     />
                   </div>
                   <div className="space-y-1.5 px-4 py-4 sm:space-y-2 sm:px-5 sm:py-5">
+                    <div className="mb-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-sand-50 text-copper-700">
+                      <Camera className="h-4 w-4" />
+                    </div>
                     <h3 className="font-serif text-2xl leading-tight text-ink-950 sm:text-3xl sm:leading-[1.04]">{card.title}</h3>
                     <p className="text-sm leading-6 text-ink-900/66">{card.subtitle}</p>
                   </div>

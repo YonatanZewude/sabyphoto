@@ -1,7 +1,7 @@
 {
-  "name": "Ethioglow",
-  "short_name": "Ethioglow",
-  "description": "Boka tid, se tjänster och galleri direkt från mobilen.",
+  "name": "SABY Photo",
+  "short_name": "SABY Photo",
+  "description": "Boka fotografering, se fototjänster och galleri direkt från mobilen.",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
