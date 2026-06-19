@@ -108,6 +108,47 @@ npm install
 npm run dev
 ```
 
+## Deployment
+
+Frontend on Vercel:
+
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Environment variables: `VITE_CLERK_PUBLISHABLE_KEY`, `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`
+
+Backend on Render:
+
+- Service type: Web Service
+- Build Command: `npm install`
+- Start Command: `npm run server`
+- Health Check Path: `/health`
+
+Required Render environment variables:
+
+```env
+SUPABASE_URL=
+SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+RESEND_API_KEY=
+ADMIN_NOTIFICATION_EMAIL=
+SALON_NAME=SABY Photo
+EMAIL_FROM_NAME=SABY Photo
+EMAIL_FROM_ADDRESS=
+CORS_ORIGIN=
+```
+
+Set `CORS_ORIGIN` to your Vercel frontend URL, for example `https://sabyphoto.vercel.app`.
+
+Backend endpoints:
+
+- `GET /health`
+- `GET /api/services`
+- `GET /api/gallery`
+- `GET /api/opening-hours`
+- `GET /api/bookings/occupancy?date=YYYY-MM-DD`
+- `POST /api/bookings`
+- `PATCH /api/bookings/:id/confirm`
+
 ## Validation
 
 ```bash

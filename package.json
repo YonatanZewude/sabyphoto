@@ -8,6 +8,7 @@
     "dev:sabyphoto": "vite --mode sabyphoto",
     "build": "tsc -b && vite build",
     "build:sabyphoto": "tsc -b && vite build --mode sabyphoto",
+    "server": "node server/index.mjs",
     "start": "vite preview --host 0.0.0.0 --port ${PORT:-10000}",
     "lint": "eslint .",
     "preview": "vite preview"

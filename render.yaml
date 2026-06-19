@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: sabyphoto-backend
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm run server
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: SALON_NAME
+        value: SABY Photo
